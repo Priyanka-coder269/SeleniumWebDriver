@@ -22,8 +22,11 @@ public class WindowsHandling {
 	for(String ID:windowIDs) {
 		String title=driver.switchTo().window(ID).getTitle();
 		
-		if(title.equals("Human Resources Management Software | HRMS | OrangeHRM") || title.equals("OrangeHRM")) {
+		if(title.equals("Human Resources Management Software | HRMS | OrangeHRM")) {
 			driver.close();
+		}
+		if( title.equals("OrangeHRM")) {
+			driver.switchTo().window(ID);
 		}
 	}
 	
